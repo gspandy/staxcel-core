@@ -1,0 +1,27 @@
+StaXcel is a Java Library to generate Excel Spreadsheets using XML StaX APIs.
+
+Why another Java excel library and what is different from other libraries?
+  - We use SpeadsheetML format to generate spreadsheet xml files, zip.
+  - XML files are generated using StaX APIs, so no DOM API usage.  Client applications can create huge excel files on server side without worrying about excel file size or no. of concurrent excel file generations.
+  - It will support generating content of each worksheet in an excel file from different threads. If a worksheet to be generated will contain lot of data, your data retrieval can be split into multiple threads and each thread can create fragment of excel file. StaXcel will take care of combining it when excel file generation is completed.
+  - Look for StaXcel-Hadoop module to see how each map reduce can generate fragment of excel file and reducer will combine content to generate final excel file.
+  
+
+Advantages of using StaXcel compared to other libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Apache POI -
+	+ Used widely
+	- Memory issue as entire excel is stored in-memory
+	 
+	 
+JexcelApi -
+	
+	- Uses Lexical Parser to do native file parsing and stores entire excel data in-memory.
+	
+	
+OpenXML4j (http://openxml4j.svn.sourceforge.net) - 
+	+ uses SpreadsheetML format
+	- Not active project.
+	- uses DOM APIs, so memory consumption is issue
+	- no multi-thread support. 
