@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2011 gopinath.mr
+ * Copyright 2011 StaXcel
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,35 +15,48 @@
  ******************************************************************************/
 package org.staxcel;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
 /**
- * Unit test for simple App.
+ * Base Exception class for all runtime exceptions in StaXcel.
+ * 
+ * @author Gopinath.MR
+ * 
  */
-public class AppTest extends TestCase {
+public class StaxcelRuntimeException extends RuntimeException {
+
 	/**
-	 * Create the test case
 	 * 
-	 * @param testName
-	 *            name of the test case
 	 */
-	public AppTest(String testName) {
-		super(testName);
+	private static final long serialVersionUID = -7874564101553640635L;
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public StaxcelRuntimeException() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @return the suite of tests being tested
+	 * {@inheritDoc}
 	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
+	public StaxcelRuntimeException(String arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * Rigourous Test :-)
+	 * {@inheritDoc}
 	 */
-	public void testApp() {
-		assertTrue(true);
+	public StaxcelRuntimeException(Throwable arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public StaxcelRuntimeException(String arg0, Throwable arg1) {
+		super(arg0, arg1);
+		// TODO Auto-generated constructor stub
+	}
+
 }

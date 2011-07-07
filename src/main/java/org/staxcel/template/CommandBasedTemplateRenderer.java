@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2011 gopinath.mr
+ * Copyright 2011 StaXcel
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,37 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.staxcel;
+package org.staxcel.template;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.io.IOException;
+
+import javax.xml.stream.XMLStreamWriter;
 
 /**
- * Unit test for simple App.
+ * 
+ * @author Gopinath.MR
+ * 
  */
-public class AppTest extends TestCase {
+public class CommandBasedTemplateRenderer implements TemplateRenderer {
+
 	/**
-	 * Create the test case
 	 * 
-	 * @param testName
-	 *            name of the test case
 	 */
-	public AppTest(String testName) {
-		super(testName);
+	public CommandBasedTemplateRenderer() {
+		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @return the suite of tests being tested
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.staxcel.template.TemplateRenderer#render(java.lang.String,
+	 * java.lang.String, javax.xml.stream.XMLStreamWriter)
 	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
+	@Override
+	public boolean render(String templateFileRelativePath, String tokenName,
+			XMLStreamWriter xmlWriter) throws IOException {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
-	/**
-	 * Rigourous Test :-)
-	 */
-	public void testApp() {
-		assertTrue(true);
-	}
 }

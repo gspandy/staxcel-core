@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2011 gopinath.mr
+ * Copyright 2011 StaXcel
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,35 +15,38 @@
  ******************************************************************************/
 package org.staxcel;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.HashMap;
+
+import org.staxcel.template.TemplateRenderer;
 
 /**
- * Unit test for simple App.
+ * Base interface containing the methods to get configuration required for
+ * spreadsheet generation.
+ * 
+ * @author Gopinath.MR
+ * 
  */
-public class AppTest extends TestCase {
+public interface SpreadSheetConfig {
+
 	/**
-	 * Create the test case
+	 * returns property value.
 	 * 
-	 * @param testName
-	 *            name of the test case
+	 * @param propertyName
+	 * @return returns property value if exists else returns <code>null</code>.
 	 */
-	public AppTest(String testName) {
-		super(testName);
-	}
+	String getProperty(String propertyName);
 
 	/**
-	 * @return the suite of tests being tested
+	 * Fill any application related context to be overriden.
+	 * 
+	 * @param context
 	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
-	}
+	void fillInContext(HashMap<String, String> context);
 
 	/**
-	 * Rigourous Test :-)
+	 * Returns template renderer to be used to replace any tokens.
+	 * 
+	 * @return template renderer if configured else return <code>null</code>.
 	 */
-	public void testApp() {
-		assertTrue(true);
-	}
+	TemplateRenderer getTemplateRenderer();
 }

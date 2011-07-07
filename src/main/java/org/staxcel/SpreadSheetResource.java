@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2011 gopinath.mr
+ * Copyright 2011 StaXcel
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,35 +15,29 @@
  ******************************************************************************/
 package org.staxcel;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
 /**
- * Unit test for simple App.
+ * Every xml file within Spreadsheet which is identified with resourceId. Any
+ * class which represents one of the xml files in .xlsx should implement this
+ * interface.
+ * 
+ * @author Gopinath.MR
+ * 
+ * @see Worksheet
  */
-public class AppTest extends TestCase {
+public interface SpreadSheetResource {
+
 	/**
-	 * Create the test case
+	 * Set resource id.
 	 * 
-	 * @param testName
-	 *            name of the test case
+	 * @param resourceId
+	 *            resource Id
 	 */
-	public AppTest(String testName) {
-		super(testName);
-	}
+	void setResourceId(int resourceId);
 
 	/**
-	 * @return the suite of tests being tested
+	 * Returns resource id
+	 * 
+	 * @return
 	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
-	}
-
-	/**
-	 * Rigourous Test :-)
-	 */
-	public void testApp() {
-		assertTrue(true);
-	}
+	int getResourceId();
 }

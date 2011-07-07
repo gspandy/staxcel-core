@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2011 gopinath.mr
+ * Copyright 2011 StaXcel
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,35 +15,24 @@
  ******************************************************************************/
 package org.staxcel;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import net.jcip.annotations.NotThreadSafe;
 
 /**
- * Unit test for simple App.
+ * Represents a fragment of excel worksheet. Data in this fragment is generated
+ * in one JVM and it is not thread-safe. So a fragment content has to be created
+ * in a single thread using WorksheetDataWriter.
+ * 
+ * @see WorksheetDataWriter
+ * 
+ * @author Gopinath.MR
+ * 
  */
-public class AppTest extends TestCase {
+@NotThreadSafe
+public interface WorksheetFragment {
 	/**
-	 * Create the test case
+	 * Returns WorksheetDataWriter associated with this fragment.
 	 * 
-	 * @param testName
-	 *            name of the test case
+	 * @return
 	 */
-	public AppTest(String testName) {
-		super(testName);
-	}
-
-	/**
-	 * @return the suite of tests being tested
-	 */
-	public static Test suite() {
-		return new TestSuite(AppTest.class);
-	}
-
-	/**
-	 * Rigourous Test :-)
-	 */
-	public void testApp() {
-		assertTrue(true);
-	}
+	WorksheetDataWriter getWriter();
 }

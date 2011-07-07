@@ -8,8 +8,16 @@
   <packaging>jar</packaging>
 
   <name>staxcel-core</name>
-  <url>http://maven.apache.org</url>
-
+  <url>http://staxcel.org</url>
+  <organization>
+    <name>StaXcel</name>
+    <url>http://staxcel.org</url>
+  </organization>
+  
+  <reporting>
+  	<plugins>
+  	</plugins>
+  </reporting>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -18,8 +26,37 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.8.2</version>
       <scope>test</scope>
     </dependency>
+	<dependency>
+	    <groupId>stax</groupId>
+	    <artifactId>stax-api</artifactId>
+	    <version>1.0.1</version>
+	</dependency>
+    <dependency>
+	    <groupId>stax</groupId>
+	    <artifactId>stax</artifactId>
+	    <version>1.2.0</version>
+	</dependency>
+	<dependency>
+		<!--  Used to document thread-safety info of classes -->
+	    <groupId>net.jcip</groupId>
+	    <artifactId>jcip-annotations</artifactId>
+	    <version>1.0</version>
+	</dependency>	
+	
+	<!--  logging infrastructure -->
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging-api</artifactId>
+	    <version>1.1</version>
+	</dependency>
+		<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
   </dependencies>
+
 </project>
